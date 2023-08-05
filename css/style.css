@@ -4,46 +4,64 @@ body {
   font-family: "El Messiri", sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #f4f4f4;
-  /* For Arabic */
-  direction: rtl;
+  background-color: var(--main-color);
+}
+
+/* Start Global */
+:root {
+  --main-color: #32a0c2;
+  --second-color: #353637;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
 
-main section {
+main section,
+main header,
+main footer {
   width: 100%;
   margin: auto;
   overflow: hidden;
 }
 
-/* Start header */
-#header {
-  background-color: #353637;
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* End Global */
+
+/* Start Header */
+header {
+  background-color: var(--second-color);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  border-bottom: 3px solid #32a0c2;
+  border-bottom: 3px solid var(--main-color);
   padding: 0 120px;
 }
 
-#branding h1 {
+.branding {
+  flex-grow: 1;
+}
+
+.branding h1 {
   font-size: 28px;
 }
 
 nav > ul {
   margin-top: 0;
-  list-style-type: none;
 }
 
-#header a {
-  color: #ffffff;
-  text-decoration: none;
+header a {
+  color: white;
 }
 
 nav > ul > li {
@@ -51,11 +69,11 @@ nav > ul > li {
   margin-left: 15px;
 }
 
-#header .highlight,
-#header .current a {
-  color: #32a0c2;
+header .highlight,
+header .current a {
+  color: var(--main-color);
 }
-/* End header */
+/* End Header */
 
 /* Start showcase */
 #showcase {
@@ -63,7 +81,7 @@ nav > ul > li {
   background: url(../img/image.jpg) no-repeat center;
   background-size: cover;
   text-align: center;
-  color: #ffffff;
+  color: white;
 }
 
 #showcase h1 {
@@ -74,45 +92,50 @@ nav > ul > li {
 
 #showcase p {
   font-size: 20px;
+  max-width: 80%;
+  margin: auto;
 }
 /* End showcase */
 
-/* Start newsletter */
+/* Start Newsletter */
 #newsletter {
+  background-color: var(--second-color);
   padding: 15px 120px;
-  color: #ffffff;
-  background-color: #353637;
+  color: white;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 #newsletter h1 {
-  float: right;
+  max-width: 255px;
 }
 
 #newsletter form {
-  float: left;
-  margin-top: 15px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-#newsletter input[type="email"] {
-  padding: 4px;
-  height: 25px;
-  width: 250px;
 }
 
-.buttom {
+#newsletter input {
+  height: 36px;
+  width: 250px;
+  border-radius: 0 6px 6px 0;
+  border: 0;
+  text-decoration: none;
+}
+
+#newsletter input:focus-visible {
+  outline: none;
+}
+
+#newsletter .buttom {
+  background-color: var(--main-color);
+  color: white;
   height: 38px;
-  background-color: #cccccc;
-  padding-left: 0 20px;
-  color: #353637;
+  padding: 0 20px;
+  border-radius: 6px 0 0 6px;
+  font-weight: bold;
+  border: none;
 }
 /* End newsletter */
 
@@ -120,30 +143,83 @@ nav > ul > li {
 #boxes {
   margin-top: 20px;
   padding: 60px 120px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-#boxes .box {
-  text-align: center;
-  margin-left: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-@media (max-width: 1020px) {
-  #boxes {
-    flex-direction: column;
-  }
+#boxes .box {
+  text-align: center;
+}
+
+#boxes .box i {
+  font-size: 32px;
+}
+
+#boxes .box h3 {
+  padding: 16px 0;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+#boxes .box p {
+  padding: 0 24px;
 }
 /* End boxes */
 
 /* Start footer */
-#footer {
+footer {
+  color: white;
+  background-color: var(--main-color);
   padding: 20px;
   margin-top: 20px;
-  color: #ffffff;
-  background-color: #32a0c2;
   text-align: center;
 }
 /* End footer */
+
+/* Start Responsive Design */
+@media (max-width: 991.98px) {
+  /* Start Newsletter */
+  #showcase p {
+    margin-bottom: 20px;
+  }
+  /* End Header */
+
+  /* Start Newsletter */
+  #newsletter {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* End Newsletter */
+}
+
+@media (max-width: 767.98px) {
+  /* Start Header */
+  header {
+    flex-direction: column;
+    padding: 0 0px;
+  }
+
+  header nav > ul {
+    margin-top: 10px;
+    padding-bottom: 20px;
+  }
+  /* End Header */
+
+  /* Start Newsletter */
+  #showcase p {
+    max-width: 95%;
+  }
+  /* End Header */
+}
+
+@media (max-width: 575.98px) {
+  /* Start boxes */
+  #boxes {
+    margin-top: 0;
+    padding: 60px 20px;
+  }
+  /* End boxes */
+}
+/* End Responsive Design */

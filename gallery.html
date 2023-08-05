@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Personal Website for Abdullah" />
+    <meta name="description" content="Personal Website" />
     <meta name="author" content="Abdullah" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="css/slider.css" />
+    <title>Personal Project | Gallery</title>
   </head>
   <body>
     <main>
-      <section id="header">
-        <div id="branding" style="flex-grow: 8">
+      <header>
+        <div class="branding" style="flex-grow: 8">
           <h1>
-            <a href="index.html"
-              ><i class="fa-solid fa-circle-user"></i> صفحة
-              <span class="highlight">عبدالله</span></a
-            >
+            <a href="index.html"><i class="fa-solid fa-circle-user"></i> صفحة <span class="highlight">عبدالله</span></a>
           </h1>
         </div>
         <nav>
@@ -30,7 +25,7 @@
             <li class="current"><a href="gallery.html">معرض الاعمال</a></li>
           </ul>
         </nav>
-      </section>
+      </header>
       <section id="slider">
         <div id="wrapper">
           <div class="content">
@@ -55,12 +50,12 @@
           </ul>
         </div>
       </section>
-      <section id="footer">
-        <p>الصفحة الشخصية عبدالله &copy; <span id="currentYear"></p>
-    </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="javascript/scripts.js"></script>
-    <script src="javascript/slider.js"></script>
+      <footer>
+        <p id="currentYear"></p>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="javascript/scripts.js"></script>
+      <script src="javascript/slider.js"></script>
     </main>
   </body>
 </html>

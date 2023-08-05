@@ -1,4 +1,3 @@
-/* Start slider */
 #slider {
   position: relative;
   margin: auto;
@@ -23,7 +22,6 @@
 #wrapper .content img {
   width: 100%;
 }
-/* End slider */
 
 #navLinks {
   text-align: center;

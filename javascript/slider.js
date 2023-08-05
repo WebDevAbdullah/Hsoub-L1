@@ -1,16 +1,19 @@
-var $links = $(".itemLinks");
+const links = document.querySelectorAll(".itemLinks");
+const wrapper = document.getElementById("wrapper");
 
-$links.click(function (e) {
-  $links.removeClass("active");
-  var clickedLink = e.target;
-  clickedLink = $(clickedLink);
-  var position = clickedLink.attr("data-pos");
-  var translateValue = "translateX(" + position * 25 + "%)";
-  $("#wrapper").css({
-    transform: translateValue,
+links.forEach(function(link) {
+  link.addEventListener("click", function(e) {
+    links.forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    const clickedLink = e.target;
+    const position = clickedLink.getAttribute("data-pos");
+    const translateValue = `translateX(${position * 25}%)`;
+    wrapper.style.transform = translateValue;
+
+    clickedLink.classList.add("active");
   });
-
-  clickedLink.addClass("active");
 });
 
-$($links[0]).addClass("active");
+links[0].classList.add("active");
