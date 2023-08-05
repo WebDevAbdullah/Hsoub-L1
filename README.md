@@ -1,2 +1,2 @@
 # Hsoub Academy Level 1 Project
-See my website live: [https://webdevabdullah.github.io/Hsoub-L1](https://webdevabdullah.github.io/Hsoub-L1/index.html)
+See my website live: [Hsoub Personal Portfolio](https://webdevabdullah.github.io/hsoub-personal-portfolio/index.html)
